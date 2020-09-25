@@ -9,10 +9,10 @@ import java.util.stream.Collectors;
 
 public class ControllerUtil {
     static Map<String, String> getErrorsMap(BindingResult bindingResult) {
-    Collector<FieldError, ?, Map<String, String>> collector = Collectors.toMap(
-            fieldError -> fieldError.getField() + "Error",
-            FieldError::getDefaultMessage
-    );
-    return bindingResult.getFieldErrors().stream().collect(collector);
-}
+        Collector<FieldError, ?, Map<String, String>> collector = Collectors.toMap(
+                fieldError -> fieldError.getField() + "Error",
+                FieldError::getDefaultMessage
+        );
+        return bindingResult.getFieldErrors().stream().collect(collector);
+    }
 }
